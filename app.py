@@ -5,7 +5,7 @@ from openai import OpenAI
 
 # Page configuration
 st.set_page_config(
-    page_title="ChatGPT Clone (o1-mini)",
+    page_title="vhs GPT Heilbronn",
     page_icon="💬",
     layout="wide"
 )
@@ -42,7 +42,7 @@ if not st.session_state.api_key_provided:
 # Only show chat interface if API key is provided
 if st.session_state.api_key_provided:
     # Button to start a new conversation
-    if st.button("New Conversation"):
+    if st.button("Neue Unterhaltung"):
         st.session_state.messages = []
         st.rerun()
     
