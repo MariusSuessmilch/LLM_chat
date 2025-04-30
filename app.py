@@ -25,7 +25,7 @@ if "openai_client" not in st.session_state:
         st.session_state.openai_client = None
 
 # Main UI
-st.title("ChatGPT Clone (o1-mini)")
+st.title("vhs GPT Heilbronn")
 
 # API Key input if not provided via environment variable
 if not st.session_state.api_key_provided:
