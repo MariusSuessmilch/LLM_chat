@@ -52,7 +52,7 @@ if st.session_state.api_key_provided:
             st.write(message["content"])
     
     # Chat input
-    if prompt := st.chat_input("What would you like to discuss?"):
+    if prompt := st.chat_input("Was möchtest du besprechen?"):
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
         
@@ -68,7 +68,7 @@ if st.session_state.api_key_provided:
             try:
                 # Create a streaming completion
                 stream = st.session_state.openai_client.chat.completions.create(
-                    model="o1-mini",
+                    model="gpt-4.1-mini-2025-04-14",
                     messages=[
                         {"role": m["role"], "content": m["content"]} 
                         for m in st.session_state.messages
@@ -98,12 +98,3 @@ else:
     st.write("This application uses OpenAI's o1-mini model to generate responses.")
     st.write("Your API key is required to access the OpenAI API.")
 
-# Add footer
-st.markdown("---")
-st.markdown("### About")
-st.markdown("""
-This is a ChatGPT clone built with Streamlit and OpenAI's o1-mini model.
-- Uses streaming text for real-time responses
-- Maintains conversation context for coherent responses
-- Protects your API key
-""")
